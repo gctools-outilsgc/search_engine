@@ -1,0 +1,26 @@
+version: '2.2'
+services:
+  es:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.0.1
+    environment:
+      - discovery.type=single-node
+    ports:
+      - 9200:9200
+    volumes:
+      - ./es_data:/usr/share/elasticsearch/data
+  ls:
+    image: docker.elastic.co/logstash/logstash:7.0.1
+    volumes:
+      - ./pipeline/:/usr/share/logstash/pipeline/
+    ports:
+      - 9600:9600
+    environment:
+      - XPACK_MONITORING_ENABLED=true
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.0.1
+    ports:
+      - 5601:5601
+    environment:
+      - SERVER_NAME=kibana
+      - ELASTICSEARCH_HOSTS=http://es:9200
+
