@@ -1,4 +1,8 @@
-{
+#!/bin/bash
+
+echo "Creating Profile index and mapping"
+
+curl -XPUT -H "Content-type: application/json" -d '{
   "mappings": {
     "properties": {
       "email": {
@@ -106,4 +110,4 @@
       }
     }
   }
-}
+}' 'http://localhost:9200/profiles'
