@@ -25,6 +25,9 @@ curl -XPUT -H "Content-type: application/json" -d '{
           }
         }
       },
+      "avatar":{
+        "type":"text"
+      }
       "officePhone": {
         "type": "text"
       },
@@ -110,4 +113,4 @@ curl -XPUT -H "Content-type: application/json" -d '{
       }
     }
   }
-}' 'http://localhost:9200/profiles'
+}' 'http://gcservices.canadaeast.cloudapp.azure.com:9200/profiles'
