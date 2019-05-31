@@ -27,7 +27,7 @@ curl -XPUT -H "Content-type: application/json" -d '{
       },
       "avatar":{
         "type":"text"
-      }
+      },
       "officePhone": {
         "type": "text"
       },
