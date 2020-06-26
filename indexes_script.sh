@@ -15,7 +15,8 @@ curl -XPUT -H "Content-type: application/json" -d '{
         "type": "text"
       },
       "suggest":{
-        "type":"completion"
+        "type":"completion",
+        "analyzer":"standard"
       },
       "name": {
         "type": "text",
